@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-div-container{
+  background-color: darkseagreen;
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 70px;
+    justify-items: center;
+    box-shadow: 0 0 15px #181c254d;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-form-div{
+  background-color: darkseagreen;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-header{
+  background-color: darkseagreen;
+}
+
+.reg-div-container {
+    background-color: darkseagreen;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 70px;
+    justify-items: center;
+    box-shadow: 0 0 15px #181c254d;
+    text-align: center;
+}
+
+.login-input-fields{
+  width: 250px;
+  background-color: beige;
+}
+
+.login-register-create-edit-button{
+  background-color: darkolivegreen;
+  border: darkolivegreen;
+  box-shadow: 0 0 15px #181c254d;
+  color: beige;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+}
+
+.register-input-fields{
+  width: 250px;
+  background-color: beige;
+}
+
+.common-blog-header{
+  text-decoration: none;
+  color:  tomato;
+}
+
+.create-blog-div{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+  background-color: darkseagreen;
+  align-items: center;
+  padding: 10px;
+}
+
+.create-form {
+  display: flex;
+  justify-content: center;
+}
+
+.create-blog-title{
+  width: 700px;
+  height: 70px;
+}
+
+.create-blog-content{
+  width: 700px;
+  height: 400px;
+}
+
+.blog-feed-div{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+  background-color: darkseagreen;
+  align-items: center;
+  padding: 10px;
+}
+
+.admin-feed-div{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+  background-color: darkseagreen;
+  align-items: center;
+  padding: 10px;
+}
+
+.blog-feed-content{
+  width: 1340px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.blog {
+  background-color: darkolivegreen;
+  margin: 3%;
+  padding: 2%;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-heading {
+  display: flex;
+  justify-content: space-between;
 }
+
+.author-name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.profile-blog-div{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+  background-color: darkseagreen;
+  align-items: center;
+  padding: 10px;
+}
+
+.my-blog-container{
+  background-color: darkolivegreen;
+  margin: 3%;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.my-blog-heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-user-heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.blogfuser-edit{
+  margin-left: 1100px;
+}
+
+.blogfuser-delete{
+  margin-right: 20px;
+}
+
+.admin-delete-button{
+  background-color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  width: 50px;
+  margin-left: 1100px;
+}
+
+.user-delete-button{
+  background-color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  width: 50px;
+
+}
+
+.publish_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.publish_button {
+  box-sizing: content-box;
+}
+
+.Blog {
+  width: 60%;
+}
+
+
