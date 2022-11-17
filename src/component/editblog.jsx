@@ -32,7 +32,7 @@ const EditBlog = () => {
       method: 'put',
       url: '/blog/update',
       data: {
-        id: blog?.id, blogTitle, blogContent
+        id: blog?.id, blogTitle, blogContent, author: localStorage.getItem("userName"), userId: localStorage.getItem("userId")
       }
     }).then((response) => {
       if (response.data) {
