@@ -6,6 +6,7 @@ const BlogU = ({data, setRefresh}) => {
   const del = (id) => {
     axios.delete(`/blog/delete/${id}`).then((response)=>setRefresh())
   }
+  const date = new Date(data.createdAt).toLocaleString("en-IN")
   return (
     <div className="blog">
       <div className="blog-user-heading">
@@ -20,7 +21,8 @@ const BlogU = ({data, setRefresh}) => {
       <br/>
       <p>{data.blogContent}</p>
       <div>
-        <small>published on 12/05/2022 10:10 </small>
+      <h4>likes: {data.likes?.length}</h4>
+        <small> {date} </small>
         <b>{data.author}</b>
       </div>
     </div>

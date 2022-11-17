@@ -17,6 +17,7 @@ const BlogA = ({data, setRefresh}) => {
           <button className='admin-delete-button' onClick={() => del(data.id)} >
             <img className='blogfuser-delete' src="https://img.icons8.com/ios-filled/40/22C3E6/trash.png" />
           </button>
+          <h4>{data.likes?.length}</h4>
       <br/>
       <p>{data.blogContent}</p>
       <div>

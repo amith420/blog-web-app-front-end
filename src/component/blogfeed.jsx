@@ -5,13 +5,14 @@ import axios from "../axios";
 
 const BlogFeed = () => {
   const [blogs, setBlogs] = useState([]);
+  const[update, setUpdate] = useState(false);
   useEffect(() => {
     axios.get("/blog/all").then((response) => {
       setBlogs(response.data.reverse())
     }).catch((error) => {
       console.log(error)
     })
-  }, [])
+  }, [update])
 
   return (
     <>
@@ -23,7 +24,7 @@ const BlogFeed = () => {
       </div>
       <div className="blog-feed-content">
         {blogs.map((blog) => (
-          <Blog data={blog} key={blog.id} />
+          <Blog data={blog} key={blog.id} setUpdate={() => setUpdate(!update)} />
         ))}
       </div>
     </>

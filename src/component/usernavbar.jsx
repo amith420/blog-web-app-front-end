@@ -13,11 +13,8 @@ const Profile = () => {
     <>
       <div className="profile-blog-div">
         <Link className="common-blog-header" to={"/homepage"}><h1>BLOG COM</h1></Link>
-        <em><strong>Hi User</strong></em>
+        <em><strong>hi, {localStorage.getItem("userName")}</strong></em>
         <div>
-          <Link to={"/profile"}>
-            <img src="https://img.icons8.com/ultraviolet/40/null/test-account.png" />
-          </Link>
           <Link to={"/create"}>
             <img src="https://img.icons8.com/material-sharp/40/null/add.png" />
           </Link>

@@ -1,10 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "../axios";
 
-const Blog = ({data}) => {
-  const [like, setlike] = useState(data.like);
-  function changelike() {
-    setlike(!like);
+const Blog = ({ data, setUpdate }) => {
+  const [like, setlike] = useState(false);
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    data.likes.forEach(user => {
+      if(user === userId){
+        setlike(true);
+      }
+    })
+  }, [])
+
+  console.log(userId, data.id)
+  function getLike() {
+    axios.patch(`/blog/like/${data.id}/${userId}`).then((response) => {
+      if (response.data) {
+        setlike(true);
+        setUpdate()
+      }
+    })
   }
+  function removeLike() {
+    axios.patch(`/blog/remove/${data.id}/${userId}`).then((response) => {
+      if (response.data) {
+        setlike(false);
+        setUpdate()
+      }
+    })
+  }
+  const date = new Date(data.createdAt).toLocaleString("en-IN")
 
   return (
     <div className="blog">
@@ -12,18 +38,21 @@ const Blog = ({data}) => {
         <h1>{data.blogTitle}</h1>
         {like ? (
           <img
-            onClick={changelike}
-            src="https://img.icons8.com/stickers/50/null/facebook-like-skin-type-1.png"/>
-        ) : (
-          <img
-            onClick={changelike}
-            src="https://img.icons8.com/ios/50/null/facebook-like--v1.png"/>
-        )}
+            onClick={removeLike}
+            src="https://img.icons8.com/stickers/50/null/facebook-like-skin-type-1.png" />
+        ) :
+          (
+            <img
+              onClick={getLike}
+              src="https://img.icons8.com/ios/50/null/facebook-like--v1.png" />
+          )}
+
+          <h4>{data.likes?.length}</h4>
       </div>
       <br />
       <p>{data.blogContent}</p>
       <div className="author-name">
-        <small>published on 12/05/2022 10:10 </small>
+        <small>{date}  </small>
         <b>{data.author}</b>
       </div>
     </div>
