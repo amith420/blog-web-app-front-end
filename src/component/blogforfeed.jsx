@@ -12,8 +12,6 @@ const Blog = ({ data, setUpdate }) => {
       }
     })
   }, [])
-
-  console.log(userId, data.id)
   function getLike() {
     axios.patch(`/blog/like/${data.id}/${userId}`).then((response) => {
       if (response.data) {
