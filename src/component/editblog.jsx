@@ -6,8 +6,8 @@ const EditBlog = () => {
 
   const [blog, setBlog] = useState()
   const edittitleref = useRef();
-  const editcontentref =useRef();
-  const {id} = useParams()
+  const editcontentref = useRef();
+  const { id } = useParams()
 
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const EditBlog = () => {
       method: 'put',
       url: '/blog/update',
       data: {
-        id: blog?.id,blogTitle, blogContent
+        id: blog?.id, blogTitle, blogContent
       }
     }).then((response) => {
       if (response.data) {
@@ -44,14 +44,14 @@ const EditBlog = () => {
   return (
     <>
       <div className="create-blog-div">
-      <Link className="common-blog-header" to={"/homepage"}><h1>BLOG COM</h1></Link>
+        <Link className="common-blog-header" to={"/homepage"}><h1>BLOG COM</h1></Link>
         <em><strong>Edit Blogs</strong></em>
         <Link to={"/profile"}><img src="https://img.icons8.com/ultraviolet/40/null/test-account.png" /></Link>
       </div>
       <div className="create-form">
         <form onSubmit={create}>
-          <textarea className="create-blog-title" type="text" defaultValue={blog?.blogTitle} required ref={edittitleref} /><br/> <br/>
-          <textarea className="create-blog-content" type="text" defaultValue={blog?.blogContent} required ref={editcontentref}/><br/><br />
+          <textarea className="create-blog-title" type="text" defaultValue={blog?.blogTitle} required ref={edittitleref} /><br /> <br />
+          <textarea className="create-blog-content" type="text" defaultValue={blog?.blogContent} required ref={editcontentref} /><br /><br />
           <div className="publish_button">
             <button className="login-register-create-edit-button">edit</button>
           </div>

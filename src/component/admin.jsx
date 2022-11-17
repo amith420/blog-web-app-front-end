@@ -28,7 +28,6 @@ const Admin = () => {
           <img src="https://img.icons8.com/ios-glyphs/40/F25081/logout-rounded-up--v1.png" />
         </Link>
       </div>
-
       <div className="blog-feed-content">
         {blogs?.map((blog) => (
           <BlogA data={blog} key={blog.id} setRefresh={() => setRefresh(!refresh)} />

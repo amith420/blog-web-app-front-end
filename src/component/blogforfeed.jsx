@@ -7,7 +7,7 @@ const Blog = ({ data, setUpdate }) => {
 
   useEffect(() => {
     data.likes.forEach(user => {
-      if(user === userId){
+      if (user === userId) {
         setlike(true);
       }
     })
@@ -36,24 +36,25 @@ const Blog = ({ data, setUpdate }) => {
     <div className="blog">
       <div className="blog-heading">
         <h1>{data.blogTitle}</h1>
-        {like ? (
-          <img
-            onClick={removeLike}
-            src="https://img.icons8.com/stickers/50/null/facebook-like-skin-type-1.png" />
-        ) :
-          (
+        <div>
+          {like ? (
             <img
-              onClick={getLike}
-              src="https://img.icons8.com/ios/50/null/facebook-like--v1.png" />
-          )}
-
-          <h4>{data.likes?.length}</h4>
+              onClick={removeLike}
+              src="https://img.icons8.com/stickers/50/null/facebook-like-skin-type-1.png" />
+          ) :
+            (
+              <img
+                onClick={getLike}
+                src="https://img.icons8.com/ios/50/null/facebook-like--v1.png" />
+            )}
+          <h4>likes: {data.likes?.length}</h4>
+        </div>
       </div>
       <br />
       <p>{data.blogContent}</p>
       <div className="author-name">
         <small>{date}  </small>
-        <b>{data.author}</b>
+        <b>Author: {data.author}</b>
       </div>
     </div>
   );

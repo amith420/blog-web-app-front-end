@@ -18,7 +18,7 @@ const CreateBlog = () => {
       method: 'post',
       url: '/blog/create',
       data: {
-        blogTitle, blogContent, author: localStorage.getItem("userName"), userId:localStorage.getItem("userId")
+        blogTitle, blogContent, author: localStorage.getItem("userName"), userId: localStorage.getItem("userId")
       }
     }).then((response) => {
       if (response.data) {

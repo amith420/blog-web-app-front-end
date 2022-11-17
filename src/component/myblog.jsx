@@ -12,12 +12,12 @@ const MyBlog = () => {
       console.log(error);
     })
   }, [refresh]);
- 
+
   return (
     <>
-        {blogs.map((blog) => (
-          <BlogU data={blog} key={blog.id} setRefresh={() => setRefresh(!refresh)}/>
-        ))}
+      {blogs.map((blog) => (
+        <BlogU data={blog} key={blog.id} setRefresh={() => setRefresh(!refresh)} />
+      ))}
     </>
   );
 };

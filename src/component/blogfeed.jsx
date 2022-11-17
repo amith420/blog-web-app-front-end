@@ -5,7 +5,7 @@ import axios from "../axios";
 
 const BlogFeed = () => {
   const [blogs, setBlogs] = useState([]);
-  const[update, setUpdate] = useState(false);
+  const [update, setUpdate] = useState(false);
   useEffect(() => {
     axios.get("/blog/all").then((response) => {
       setBlogs(response.data.reverse())

@@ -23,7 +23,6 @@ const LoginPage = () => {
       }
     }).then((response) => {
       if (response.data) {
-        console.log(response)
         localStorage.setItem("isLoggedIn", true)
         localStorage.setItem("userId", response.data.id)
         localStorage.setItem("role", response.data.role)
