@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "../axios";
 import BlogA from './blogforadmin';
 
 const Admin = () => {
   const [blogs, setBlogs] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const navigate = useNavigate()
   const del = (id) => {
     axios.delete(`/blog/delete/${id}`).then((response) => setRefresh())
   }
+
+  useEffect(() => {
+    if (!(localStorage.getItem("role") == "admin")) {
+      return navigate('/')
+    }
+  }, [])
+
 
   useEffect(() => {
     axios.get("/blog/all").then((response) => {

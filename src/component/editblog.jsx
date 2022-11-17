@@ -8,8 +8,13 @@ const EditBlog = () => {
   const edittitleref = useRef();
   const editcontentref = useRef();
   const { id } = useParams()
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if ((localStorage.getItem("role") == "admin")) {
+      return navigate('/admin')
+    }
+  }, [])
 
   useEffect(() => {
     axios.get(`/blog/id/${id}`).then((response) => {

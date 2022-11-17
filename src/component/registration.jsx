@@ -1,5 +1,5 @@
 import axios from "../axios";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Registration = () => {
@@ -11,6 +11,12 @@ const Registration = () => {
   const repasswordref = useRef();
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if ((localStorage.getItem("role") == "admin")) {
+      return navigate('/admin')
+    }
+  }, [])
 
   function register(e) {
     e.preventDefault();

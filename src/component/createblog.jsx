@@ -1,5 +1,5 @@
 import axios from "../axios";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
@@ -7,6 +7,12 @@ const CreateBlog = () => {
   const blogtitleref = useRef();
   const blogcontentref = useRef();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if ((localStorage.getItem("role") == "admin")) {
+      return navigate('/admin')
+    }
+  }, [])
 
   function create(e) {
     e.preventDefault();

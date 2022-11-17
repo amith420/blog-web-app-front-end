@@ -6,6 +6,14 @@ import axios from "../axios";
 const BlogFeed = () => {
   const [blogs, setBlogs] = useState([]);
   const [update, setUpdate] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if ((localStorage.getItem("role") == "admin")) {
+      return navigate('/admin')
+    }
+  }, [])
+
   useEffect(() => {
     axios.get("/blog/all").then((response) => {
       setBlogs(response.data.reverse())
