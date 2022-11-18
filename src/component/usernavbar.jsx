@@ -3,7 +3,6 @@ import MyBlog from "./myblog";
 
 const Profile = () => {
   const navigate = useNavigate();
-  console.log(navigate)
   const logout = () => {
     localStorage.clear()
     navigate("/")
