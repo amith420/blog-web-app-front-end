@@ -7,6 +7,11 @@ const Admin = () => {
   const [blogs, setBlogs] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate()
+  
+  const logout = () => {
+    localStorage.clear()
+    navigate("/")
+  }
   const del = (id) => {
     axios.delete(`/blog/delete/${id}`).then((response) => setRefresh())
   }
@@ -17,7 +22,6 @@ const Admin = () => {
     }
   }, [])
 
-
   useEffect(() => {
     axios.get("/blog/all").then((response) => {
       setBlogs(response.data.reverse())
@@ -26,15 +30,14 @@ const Admin = () => {
     })
   }, [refresh])
 
-
   return (
     <>
       <div className="admin-feed-div">
         <Link className="common-blog-header" to={"/homepage"}><h1>BLOG COM</h1></Link>
         <em><strong>Hi Admin</strong></em>
-        <Link to={"/"}>
+        <div onClick={logout}>
           <img src="https://img.icons8.com/ios-glyphs/40/F25081/logout-rounded-up--v1.png" />
-        </Link>
+        </div>
       </div>
       <div className="blog-feed-content">
         {blogs?.map((blog) => (

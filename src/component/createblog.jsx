@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
-
   const blogtitleref = useRef();
   const blogcontentref = useRef();
   const navigate = useNavigate();
