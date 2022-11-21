@@ -118,7 +118,7 @@
 }
 
 .blog {
-  background-color: darkolivegreen;
+  background-color: lightgray;
   margin: 3%;
   padding: 2%;
   border-radius: 10px;
@@ -171,15 +171,15 @@
 }
 
 .admin-delete-button {
-  background-color: darkolivegreen;
-  border: 1px solid darkolivegreen;
+  background-color: lightgray;
+  border: 1px solid lightgray;
   width: 50px;
   margin-left: 1100px;
 }
 
 .user-delete-button {
-  background-color: darkolivegreen;
-  border: 1px solid darkolivegreen;
+  background-color: lightgray;
+  border: 1px solid lightgray;
   width: 50px;
 
 }
